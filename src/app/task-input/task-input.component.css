@@ -1,0 +1,27 @@
+.task-input-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+}
+
+.btn-add{
+  outline: 0;
+  border: 2px solid black;
+  background-color: lightgreen;
+  font-size: 1.5rem;
+  font-weight: 600px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.btn-add:hover{
+  background-color: rgb(31, 209, 31);
+}
+
+.task-input-wrapper * {
+  margin: 0.5rem;
+}

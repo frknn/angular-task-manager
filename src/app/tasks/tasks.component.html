@@ -1,0 +1,35 @@
+<div class="tasks-wrapper">
+  <div class="how-it-works">Aşağıdaki kutuya görev tanımını girip kategorisini seçerek görev ekleyebilirsiniz. Her
+    görevi üstündeki tamamla butonu ile tamamlanmış olarak işaretleyebilir, isterseniz sil butonu ile silebilirsiniz.
+    Günlük, Haftalık ve Aylık butonları ile görevleri filtreleyebilirsiniz. Tamamlananları Sil ve Tümünü Sil butonları
+    her kategori için ayrı ayrı çalışır.</div>
+  <app-task-input (addNewTask)="createTask($event)"></app-task-input>
+  <div *ngIf="notification" class="notification">
+    <p>{{notification}}</p><span (click)="notification=''">KAPAT</span>
+  </div>
+  <div class="tasks">
+    <div class="task-filter">
+      <div [class.selected]="taskFilter==='günlük'" (click)="filterTasks('günlük')" class="task-filter-item">Günlük
+      </div>
+      <div [class.selected]="taskFilter==='haftalık'" (click)="filterTasks('haftalık')" class="task-filter-item">
+        Haftalık</div>
+      <div [class.selected]="taskFilter==='aylık'" (click)="filterTasks('aylık')" class="task-filter-item">Aylık</div>
+    </div>
+    <div class="task-filter">
+      <div (click)="deleteDone(taskFilter)" class="task-filter-item-delete">Tamamlananları Sil</div>
+      <div (click)="deleteAll(taskFilter)" class="task-filter-item-delete">Tümünü Sil</div>
+    </div>
+    <div class="no-tasks-message" *ngIf="tasks.length === 0">Hiç {{taskFilter}} görev yok...</div>
+    <div class="task-item" *ngFor="let task of tasks">
+      <div class="task-div" [class.done]="task.done" style="font-weight: bold; border-right: 2px solid black">
+        {{task.task}}</div>
+      <div class="task-div" style="border-right: 2px solid black;">Son tarih: {{task.deadline | date:'dd/MM/yyyy'}}
+      </div>
+      <div class="task-div">
+        <button (click)="switchTaskDone(task)" *ngIf="task.done; else elseBlock" class="btn-undo">Geri Al</button>
+        <ng-template #elseBlock><button (click)="switchTaskDone(task)" class="btn-done">Tamamla</button></ng-template>
+        <button (click)="deleteTask(task)" class="btn-delete">Sil</button>
+      </div>
+    </div>
+  </div>
+</div>

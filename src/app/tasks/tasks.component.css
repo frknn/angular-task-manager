@@ -1,0 +1,152 @@
+.tasks-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem auto;
+  width: 100%;
+}
+
+.how-it-works {
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px dashed black;
+  background-color: lightyellow;
+  text-align: center;
+  font-weight: bold;
+}
+
+.done {
+  background-color: lightgreen;
+  border-radius: 10px 0 0 10px;
+}
+
+.task-filter {
+  display: flex;
+}
+
+.task-filter-item {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.task-filter-item:hover {
+  background-color: #ecd3fa;
+}
+
+.task-filter-item-delete {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid white;
+  cursor: pointer;
+  background-color: rgb(255, 180, 180);
+}
+
+.task-filter-item-delete:hover {
+  background-color: lightcoral;
+  border: 2px solid black;
+}
+
+.selected {
+  background-color: #ecd3fa;
+  border: 2px solid black;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.notification {
+  border: 1px solid black;
+  margin-top: 1rem;
+}
+
+.notification p {
+  display: inline;
+  padding: 0 0.5rem;
+  vertical-align: middle;
+}
+
+.notification span{
+  background-color: rgb(255, 180, 180);
+  cursor: pointer;
+  height: 100%;
+  padding: 0.3rem;
+  display: inline-block;
+  font-size: 0.7rem;
+}
+
+.notification span:hover{
+  background-color: lightcoral;
+}
+
+.no-tasks-message{
+  margin: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.task-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  background-color: rgb(250, 244, 189);
+}
+
+.task-item .task-div {
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-done {
+  height: 18px;
+  background-color: rgb(184, 255, 184);
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-delete {
+  height: 18px;
+  background-color: rgb(255, 131, 93);
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-undo {
+  height: 18px;
+  background-color: rgb(247, 255, 142);
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-done:hover {
+  background-color: lightgreen;
+}
+
+.btn-delete:hover {
+  background-color: red;
+}
+
+.btn-undo:hover {
+  background-color: rgb(218, 255, 53);
+}

@@ -1,0 +1,13 @@
+<div class="task-input-wrapper">
+  <label for="taskInput">Görev: 
+    <input [(ngModel)]="taskInput"  type="text" placeholder="Görevinizi giriniz...">
+  </label>
+  <label for="taskCategory">Kategori: 
+    <select [(ngModel)]="category" name="taskCategory" id="taskCategoryId">
+      <option value="günlük">günlük</option>
+      <option value="haftalık">haftalık</option>
+      <option value="aylık">aylık</option>
+    </select>
+  </label>
+  <button (click)="createTask()" class="btn-add">Ekle</button>
+</div>
